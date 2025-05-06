@@ -30,3 +30,42 @@ nav a {
     color:rgb(70, 130, 180)
 }
 
+#sobre{
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+}
+
+.foto-perfil{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+}
+
+#sobre .container{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sobre h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#sobre p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.glass-card{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    backdrop-filter:  blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
