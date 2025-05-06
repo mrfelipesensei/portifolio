@@ -1,0 +1,32 @@
+@font-face{
+    font-family: 'Satoshi';
+    src: url('./fonts/Satoshi-Variable.ttf') format('truetype');
+}
+
+
+body{
+    margin: 0;
+    font-family: 'Satoshi', sans-serif;
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo1{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    font-weight: 500;
+    color:rgb(70, 130, 180)
+}
+
