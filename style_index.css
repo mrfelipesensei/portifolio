@@ -45,6 +45,7 @@ nav a{
     margin-left: 20px;
     font-weight: bold;
     transition: 0.3s;
+    font-size: 1.3rem;
 }
 nav a:hover{
     text-shadow: 0 0 8px var(--neon-pink); 
@@ -54,9 +55,10 @@ section{
     margin-top: 40px;
 }
 
-h1, h3 {
+h1, h2, h3 {
     color: var(--neon-green);
     text-shadow: 0 0 5px var(--neon-green);
+    text-align: center;
 }
 
 .glass-card{
@@ -76,7 +78,10 @@ h1, h3 {
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .foto-perfil {
@@ -88,21 +93,35 @@ h1, h3 {
     box-shadow: 0 0 10px var(--neon-pink);
 }
 
-.contato-containter{
+.contato-container{
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
 }
 
 .item-contato {
-    flex: 1 1 200px;
+    flex: 1 1 250px;
     max-width: 250px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.item-contato a{
+    text-decoration: none;
+    color: var(--text)
+}
+
+.item-contato p{
+    font-size: 1.1rem;
+    margin-top: 5px;
 }
 
 .item-contato img{
+    display: block;
     width: 60px;
     height: 60px;
-    margin: 10px 0;
+    margin: 10px auto;
     filter: drop-shadow(0 0 8px var(--neon-green))
 }
