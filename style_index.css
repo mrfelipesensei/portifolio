@@ -125,3 +125,25 @@ h1, h2, h3 {
     margin: 10px auto;
     filter: drop-shadow(0 0 8px var(--neon-green))
 }
+
+.whatsapp-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /*Garante que o botão fique acima de outros elementos*/
+}
+
+.whatsapp-button a{
+    display: block;
+}
+
+.whatsapp-button img{
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0px 0px 9px var(--neon-green));
+    transition: 0.3s ease;
+}
+.whatsapp-button img:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
