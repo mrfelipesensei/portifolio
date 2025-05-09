@@ -131,6 +131,12 @@ h1, h2, h3 {
     bottom: 20px;
     right: 20px;
     z-index: 999; /*Garante que o botão fique acima de outros elementos*/
+    opacity: 0; /*Inicialmente invisível*/
+    transition: opacity 0.3s ease-in-out;
+}
+
+.whatsapp-button.visible{
+    opacity: 1;
 }
 
 .whatsapp-button a{

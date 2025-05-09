@@ -30,6 +30,16 @@
             </div>
         </div>
     </section>
+    <section id="projetos">
+        <div class="projetos-container">
+            <div class="item-projeto">
+                <h4 id="ponto-aparecimento-whatsapp">
+                    
+                </h4>
+            </div>
+        </div>
+
+    </section>
     <section id="contato">
         <div class="contato-container">
             <div class="item-contato">
@@ -66,5 +76,29 @@
             <img src="/imgs/icons8-whatsapp-100.png" alt="">
         </a>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const whatsappButton = document.querySelector('.whatsapp-button');
+            const pontoAparecimento = document.getElementById('ponto-aparecimento-whatsapp');
+
+            if (whatsappButton && pontoAparecimento){
+                function verificarVisibilidade() {
+                    const posicaoPonto = pontoAparecimento.getBoundingClientRect().top;
+                    const alturaJanela = window.innerHeight;
+
+                    //Se o ponto de aparecimento estiver visível (ou já passou pela parte superior)
+                    if (posicaoPonto < alturaJanela){
+                        whatsappButton.classList.add('visible');
+                    } else {
+                        whatsappButton.classList.remove('visible');
+                    }
+                }
+
+                //Verificar a visibilidade ao carregar e rolar a página
+                verificarVisibilidade();
+                window.addEventListener('scroll', verificarVisibilidade);
+            }
+        });
+    </script>
 </body>
 </html>
