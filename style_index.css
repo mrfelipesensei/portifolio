@@ -96,21 +96,23 @@ h1, h2, h3 {
 #tecnologias {
     padding: 2rem;
     text-align: center;
+    overflow: hidden;
 }
 
 .tec-carrossel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem;
-    scrollbar-width: none;
-    max-width: 900px;
+    overflow: hidden;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-.tec-carrossel::-webkit-scrollbar {
-    display: none;
+.carrossel-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+.carrossel-track.paused {
+    animation-play-state: paused;
 }
 
 .tecnologia {
@@ -128,7 +130,14 @@ h1, h2, h3 {
     transform: scale(1.2);
 }
 
-
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 .contato-container{
     display: flex;

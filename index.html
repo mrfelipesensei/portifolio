@@ -33,30 +33,60 @@
     <section id="tecnologias">
         <h2>Tecnologias</h2>
         <div class="tec-carrossel">
-            <div class="tecnologia">
-                <img src="imgs/icons8-html-5-100.png" alt="" title="HTML5">
+            <div class="carrossel-track">
+                <div class="tecnologia">
+                    <img src="imgs/icons8-html-5-100.png" alt="" title="HTML5">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-css-logo-100.png" alt="" title="CSS3">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-javascript-100.png" alt="" title="JavaScript">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-php-elephant-100.png" alt="" title="PHP">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-mysql-logo-100.png" alt="" title="MySQL">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-python-100.png" alt="" title="Python">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-react-100.png" alt="" title="React">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-json-download-100.png" alt="">
+                </div>
+
+                <!--Duplicado para loop-->
+
+                <div class="tecnologia">
+                    <img src="imgs/icons8-html-5-100.png" alt="" title="HTML5">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-css-logo-100.png" alt="" title="CSS3">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-javascript-100.png" alt="" title="JavaScript">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-php-elephant-100.png" alt="" title="PHP">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-mysql-logo-100.png" alt="" title="MySQL">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-python-100.png" alt="" title="Python">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-react-100.png" alt="" title="React">
+                </div>
+                <div class="tecnologia">
+                    <img src="imgs/icons8-json-download-100.png" alt="">
+                </div>
             </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-css-logo-100.png" alt="" title="CSS3">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-javascript-100.png" alt="" title="JavaScript">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-php-elephant-100.png" alt="" title="PHP">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-mysql-logo-100.png" alt="" title="MySQL">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-python-100.png" alt="" title="Python">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-react-100.png" alt="" title="React">
-            </div>
-            <div class="tecnologia">
-                <img src="imgs/icons8-json-download-100.png" alt="">
-            </div>
+            
         </div>
     </section>
     <section id="projetos">
@@ -128,30 +158,16 @@
                 window.addEventListener('scroll', verificarVisibilidade);
             }
 
-            const carrossel = document.querySelector(".tec-carrossel");
-            let scrollAmount = 0;
+            const carrossel = document.querySelector('.carrossel-track');
 
-            function autoScroll() {
-                if (carrossel.scrollWidth - carrossel.clientWidth == scrollAmount) {
-                    scrollAmount = 0;
-                    carrossel.scrollTo({
-                        left: scrollAmount,
-                        behavior: "smooth"  
-                    });
-                } else {
-                    scrollAmount += 1;
-                    carrossel.scrollTo({
-                        left: scrollAmount,
-                        behavior: "smooth"
-                    });
-                }
-            }
+            carrossel.addEventListener('mouseenter', () => {
+                carrossel.classList.add('paused');
+            });
 
-            setInterval(autoScroll, 30); //velocidade (menor, mais rápido)
+            carrossel.addEventListener('mouseleave', () => {
+                carrossel.classList.remove('paused');
+            });
         });
-
-
-
     </script>
 </body>
 </html>
