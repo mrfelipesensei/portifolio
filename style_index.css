@@ -93,6 +93,43 @@ h1, h2, h3 {
     box-shadow: 0 0 10px var(--neon-pink);
 }
 
+#tecnologias {
+    padding: 2rem;
+    text-align: center;
+}
+
+.tec-carrossel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem;
+    scrollbar-width: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tec-carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.tecnologia {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.tecnologia img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.tecnologia:hover img {
+    transform: scale(1.2);
+}
+
+
+
 .contato-container{
     display: flex;
     gap: 20px;
