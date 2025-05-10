@@ -103,16 +103,23 @@ h1, h2, h3 {
     overflow: hidden;
     max-width: 100%;
     margin: 0 auto;
+    padding-top: 5px;
 }
 
 .carrossel-track {
     display: flex;
     gap: 2rem;
     width: max-content;
-    animation: scroll 40s linear infinite;
+    animation: scroll 20s linear infinite;
 }
 .carrossel-track.paused {
     animation-play-state: paused;
+}
+
+#htec {
+    font-size: 1.7rem;
+    margin-top: -40px;
+    padding-bottom: 5px;
 }
 
 .tecnologia {
@@ -129,6 +136,16 @@ h1, h2, h3 {
 .tecnologia:hover img {
     transform: scale(1.2);
 }
+
+.tecnologia-nome {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
 
 @keyframes scroll {
     0% {

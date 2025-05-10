@@ -31,59 +31,59 @@
         </div>
     </section>
     <section id="tecnologias">
-        <h2>Tecnologias</h2>
+        <h2 id="htec">Tecnologias</h2>
         <div class="tec-carrossel">
             <div class="carrossel-track">
                 <div class="tecnologia">
-                    <img src="imgs/icons8-html-5-100.png" alt="" title="HTML5">
+                    <img src="imgs/icons8-html-5-100.png" alt="HTML5" title="HTML5">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-css-logo-100.png" alt="" title="CSS3">
+                    <img src="imgs/icons8-css-logo-100.png" alt="CSS3" title="CSS3">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-javascript-100.png" alt="" title="JavaScript">
+                    <img src="imgs/icons8-javascript-100.png" alt="JavaScript" title="JavaScript">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-php-elephant-100.png" alt="" title="PHP">
+                    <img src="imgs/icons8-php-elephant-100.png" alt="PHP" title="PHP">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-mysql-logo-100.png" alt="" title="MySQL">
+                    <img src="imgs/icons8-mysql-logo-100.png" alt="MySQL" title="MySQL">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-python-100.png" alt="" title="Python">
+                    <img src="imgs/icons8-python-100.png" alt="Python" title="Python">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-react-100.png" alt="" title="React">
+                    <img src="imgs/icons8-react-100.png" alt="React" title="React">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-json-download-100.png" alt="">
+                    <img src="imgs/icons8-json-download-100.png" alt="JSON" title="JSON">
                 </div>
 
                 <!--Duplicado para loop-->
 
                 <div class="tecnologia">
-                    <img src="imgs/icons8-html-5-100.png" alt="" title="HTML5">
+                    <img src="imgs/icons8-html-5-100.png" alt="HTML5" title="HTML5">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-css-logo-100.png" alt="" title="CSS3">
+                    <img src="imgs/icons8-css-logo-100.png" alt="CSS3" title="CSS3">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-javascript-100.png" alt="" title="JavaScript">
+                    <img src="imgs/icons8-javascript-100.png" alt="JavaScript" title="JavaScript">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-php-elephant-100.png" alt="" title="PHP">
+                    <img src="imgs/icons8-php-elephant-100.png" alt="PHP" title="PHP">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-mysql-logo-100.png" alt="" title="MySQL">
+                    <img src="imgs/icons8-mysql-logo-100.png" alt="MySQL" title="MySQL">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-python-100.png" alt="" title="Python">
+                    <img src="imgs/icons8-python-100.png" alt="Python" title="Python">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-react-100.png" alt="" title="React">
+                    <img src="imgs/icons8-react-100.png" alt="React" title="React">
                 </div>
                 <div class="tecnologia">
-                    <img src="imgs/icons8-json-download-100.png" alt="">
+                    <img src="imgs/icons8-json-download-100.png" alt="JSON" title="JSON">
                 </div>
             </div>
             
@@ -166,6 +166,41 @@
 
             carrossel.addEventListener('mouseleave', () => {
                 carrossel.classList.remove('paused');
+            });
+
+            const tecnologias = document.querySelectorAll('.tecnologia');
+
+            tecnologias.forEach(tecnologia => {
+                const img = tecnologia.querySelector('img');
+                if (img && img.title) {
+                    const tecnologiaNome = img.title;
+                    let nomeElement = null;
+
+                    tecnologia.addEventListener('mouseover', (event) => {
+                        nomeElement = document.createElement('span');
+                        nomeElement.classList.add('tecnologia-nome');
+                        nomeElement.textContent = tecnologiaNome;
+
+                        //Posiciona o nome no centro do elemento
+                        const rect = tecnologia.getBoundingClientRect();
+                        const nomeWidth = nomeElement.offsetWidth;
+                        const nomeHeight = nomeElement.offsetHeight;
+
+                        nomeElement.style.position = 'absolute';
+                        nomeElement.style.left = `${(rect.width - nomeWidth) / 2}px`;
+                        nomeElement.style.top = `${(rect.height - nomeHeight) / 2}px`;
+                        nomeElement.style.pointerEvents = 'none'; //Para não interferir nos eventos do mouse
+
+                        tecnologia.appendChild(nomeElement);
+                    });
+
+                    tecnologia.addEventListener('mouseout', () => {
+                        if (nomeElement) {
+                            tecnologia.removeChild(nomeElement);
+                            nomeElement = null
+                        }
+                    });
+                }
             });
         });
     </script>
