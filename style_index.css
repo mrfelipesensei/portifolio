@@ -217,6 +217,7 @@ h1, h2, h3 {
     font-weight: bold;
     transition: 0.3s ease;
     backdrop-filter: blur(4px);
+    margin-left: 5px;
 }
 .projeto-info a:hover {
     background: rgba(255, 0, 255, 0.15);
