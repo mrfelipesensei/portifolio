@@ -230,6 +230,14 @@
             <img src="imgs/icons8-whatsapp-100.png" alt="">
         </a>
     </div>
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="video-container">
+                <iframe id="projectVideo" width="800" height="450" frameborder="0" allow="accelerometer; autoplay; clipboard-write; ecrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             const whatsappButton = document.querySelector('.whatsapp-button');
@@ -297,6 +305,38 @@
                     });
                 }
             });
+
+            const videoModal = document.getElementById('videoModal');
+            const closeButton = document.querySelector('.close-button');
+            const projectVideo = document.getElementById('projectVideo');
+
+            function openVideoModal(videoUrl) {
+                projectVideo.src = videoUrl;
+                videoModal.classList.add('active');
+            }
+
+            function closeVideoModal() {
+                videoModal.classList.remove('active');
+                projectVideo.src = "";
+            }
+
+            closeButton.addEventListener('click', closeVideoModal);
+
+            window.addEventListener('click', function(event){
+                if (event.target == videoModal) {
+                    closeVideoModal();
+                }
+            });
+
+            document.querySelectorAll('.projeto-info a i.fa-solid.fa-video').forEach(button => {
+                button.closest('a').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
+                    const videoUrl = this.href;
+                    openVideoModal(videoUrl);
+                });
+            });
+
         });
     </script>
 </body>
